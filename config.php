@@ -13,16 +13,13 @@ $date = $_POST["date"];
 
 }
 
-// معلومات الإتصال بقاعدة البيانات
 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "cash_bank";
 
-// إنشاء الإتصال
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-// إختبار الإتصال
 if (!$conn) {
 die("Connection failed: " . mysqli_connect_error());
 }
@@ -31,7 +28,7 @@ $sql = "INSERT INTO mytable (firstn, lastn, email ,password,city,adress,zcode,da
 VALUES ('$firstn', '$lastn', '$email' , '$password', '$city', '$adress', '$zcode', '$date')";
 
 if (mysqli_query($conn, $sql)) {
-echo "تم إرسال معلومات بنجاح";
+echo "sended";
 } else {
 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
